@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{url_for('static', filename = 'img/about_header.jpg')}})">
+    <div class="container position-relative px-1 px-lg-1">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="page-heading">
+                    <h1>About Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style = 'font-size: 0.9rem; color: #d2d2cf; position:absolute; bottom:0; right:0; padding: 0 0.5rem 0.2rem 0'>
+        Photo taken by Yanan Li
+    </div>
+</header>
+<!-- Main Content-->
+      <main class="mb-4">
+            <div class="container px-3 px-lg-4">
+
+                <div class="row gx-3 gx-lg-4 mb-3 justify-content-center">
+                    <div class="col-md-5 col-lg-4 col-xl-3 d-flex justify-content-center">
+                        <h1>Team</h1>
+                    </div>
+                </div>
+                <div class="row gx-3 gx-lg-4 justify-content-center">
+                    <div class="col-md-5 col-lg-4 col-xl-3 d-flex justify-content-center text-center">
+                        <div>
+                        <img class="shadow rounded-circle mb-2" src="{{url_for('static', filename = 'img/Diego Mendez.jpg')}}" alt="" style = "margin: auto; display: block; width: 150px; height: 150px;">
+                        <h4>
+                            <a href="https://staff.ki.se/people/diego-yacaman-mendez" target="_new" style = 'font-weight: normal;'>Diego Yacaman Mendez</a>
+                        </h4>
+                        <a href="mailto: diego.yacaman.mendez@ki.se" target="_new"><i class="fab fa-solid fa-envelope fa-fw"></i> <span class="network-name">Contact</span></a></p> 
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4 col-xl-3 d-flex justify-content-center text-center">
+                        <div>
+                        <img class="shadow rounded-circle mb-2" src="{{url_for('static', filename = 'img/Minhao Zhou.png')}}" alt="" style = "margin: auto; display: block; width: 150px; height: 150px;">
+                        <h4>
+                            <a href="https://www.ces.regionstockholm.se/om-oss/vi-som-arbetar-har/enheten-for-halsolage-och-vardbehov/" target="_new" style = 'font-weight: normal;'>Minhao Zhou</a>
+                        </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-4 col-xl-3 d-flex justify-content-center text-center">
+                        <div>
+                        <img class="shadow rounded-circle mb-2" src="{{url_for('static', filename = 'img/Anton Lager.jpg')}}" alt="" style = "margin: auto; display: block; width: 150px; height: 150px;">
+                        <h4>
+                            <a href="https://staff.ki.se/people/anton-lager" target="_new" style = ' font-weight: normal;'>Anton Lager</a>
+                        </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}

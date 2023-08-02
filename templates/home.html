@@ -1,0 +1,33 @@
+        {% extends 'base.html' %}
+        {% block main %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{url_for('static', filename = 'img/home_header.jpg')}})">
+            <div class="container position-relative px-1 px-lg-1">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                        <div class="page-heading">
+                            <h1 style = 'text-align: left; font-size: 4rem'>Characterization of data-driven clusters in diabetes-free adults and their utility for risk stratification of type 2 diabetes</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-3 px-lg-4">
+                <div class="row gx-3 gx-lg-4 justify-content-center">
+                    <div class="col-md-11 col-lg-10 col-xl-9">
+                        <p>Data on 7,317 diabetes-free adults from Sweden were used in the main analysis, and on 2,332 diabetes-free adults from Mexico for external validation. Clusters were based on sex, family history of diabetes, educational attainment, fasting blood glucose and insulin levels, estimated insulin resistance and β-cell function, systolic and diastolic blood pressure, and BMI. The risk of type 2 diabetes was assessed using Cox proportional hazards models. The predictive accuracy and long-term stability of the clusters were then compared to different definitions of prediabetes.</p>
+                        <p>Six risk phenotypes were identified using cluster analysis independently in both cohorts: very low risk (VLR), low-risk low β-cell function (LRLB), low-risk high β-cell function (LRHB), high-risk high blood pressure (HRHBP), high-risk β-cell failure (HRBF), and high-risk insulin-resistant (HRIR).</p>
+                        <img src="{{url_for('static', filename = 'img/sdpp_box.png')}}" alt="SDPP box plot" style = "max-width: 90%; display: block; margin: auto;">
+                        <img src="{{url_for('static', filename = 'img/mexico_box.png')}}" alt="MEXICO box plot" style = "max-width: 90%; display: block; margin: auto;">
+                        <p>Compared to the LRHB cluster, the VLR and LRLB clusters showed a lower risk, while the HRHBP, HRBF, and HRIR clusters showed a higher risk of developing type 2 diabetes. The high-risk clusters, as a group, had a better predictive accuracy than prediabetes and adequate stability after 20 years.</p>
+                        <img src="{{url_for('static', filename = 'img/survival.png')}}" alt="Survival" style = "max-width: 90%; display: block; margin: auto;">
+                        <h1 style = "text-align: center;">Code</h1>
+                        <p style = "text-align: center;">Our code is available at 
+                        <a href="https://github.com/youbao88/sdpp_cluster_t2d" target="_new"><i class="fab fa-github fa-fw"></i><span class="network-name">Github</span></a>.</p> 
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

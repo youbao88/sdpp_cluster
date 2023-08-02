@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{%block head%}
+<script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+{% endblock %}
+
+{% block main %}
+<!-- Page Header-->
+<header class="masthead" style="background-image: url({{url_for('static', filename = 'img/umap_header.jpg')}})">
+    <div class="container position-relative px-1 px-lg-1">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-7 col-lg-8 col-xl-9">
+                <div class="page-heading">
+                    <h1>3D Umap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+      <main class="mb-4">
+            <div class="container px-3 px-lg-4">
+                <div class="row gx-3 gx-lg-4 justify-content-center">
+                    <div class="col-md-11 col-lg-10 col-xl-9">
+                        <p>Visualization of the clusters in SDPP (above) and MSC (below) using dimension reduction with u-MAP. The distance matrix was pre-computed by using K-prototype dissimilarity.</p>
+                        <div id = 'sdpp_umap'>
+                        <div id = 'mexico_umap'>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock %}
+
+{% block script %}
+<script>
+    let sdpp_umap_json = {{ sdpp_umap_json | safe}};
+    let mexico_umap_json = {{ mexico_umap_json | safe }};
+    let layout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        height:800 
+    }
+    Plotly.react('sdpp_umap', sdpp_umap_json, layout)
+    Plotly.react('mexico_umap', mexico_umap_json, layout)
+</script>
+{% endblock%}

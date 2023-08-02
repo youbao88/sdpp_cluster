@@ -1,0 +1,44 @@
+        {% extends 'base.html' %}
+
+        {%block head%}
+        <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+        {% endblock %}
+
+        {% block main %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{url_for('static', filename = 'img/sankey_header.jpg')}})">
+            <div class="container position-relative px-1 px-lg-1">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-7 col-lg-8 col-xl-9">
+                        <div class="page-heading">
+                            <h1>Sankey Plot</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-3 px-lg-4">
+                <div class="row gx-3 gx-lg-4 justify-content-center">
+                    <div class="col-md-11 col-lg-10 col-xl-9">
+                        <p>Patterns of transition between the baseline, 10-year and 20-year follow-ups of the SDPP cohort. The thickness of the line represents the proportion of individuals at each time-point. Low-risk clusters are marked as light blue while the high-risk clusters as red.  VLR: Very low risk, LRLB: Low risk low beta cell function, LRHB: Low risk high beta cell function, HRHBP: High risk high blood pressure, HRBF: High-risk beta cell failure, HRIR: High-risk insulin resistance.</p>
+                        <div id = 'sankey'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}
+
+        {% block script %}
+        <script>
+            let data = {{sankey_json | safe}};
+            let layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                height:  800
+            }
+            Plotly.react('sankey', data, layout)
+        </script>
+        {% endblock%}
